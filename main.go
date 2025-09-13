@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
+	_ "github.com/dev-khalid/go-fiber-rest-api/config"
 )
 
 func main() {
