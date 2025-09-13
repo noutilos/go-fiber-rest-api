@@ -14,13 +14,15 @@ A modern REST API built with Go Fiber framework, featuring hot reloading, contai
 - 🎛️ **Kafka UI** - Kafka dashboard
 - 🛠️ **Adminer** - Database management
 
+## Architecture
+High level overview: ![High Level Design](./idea/go-fiber-rest-api.webp)
+
 ## Quick Start
 
 ### Prerequisites
 
 - Docker & Docker Compose
-- Go 1.23+ (for local development)
-- Make (optional, for using Makefile commands)
+- Go 1.25
 
 ### Development Environment
 
