@@ -12,3 +12,5 @@ migration-down:
 migration-generate:
 	go run github.com/pressly/goose/v3/cmd/goose -dir ./migrations create $(name) sql
 
+migration-fix:
+	go run github.com/pressly/goose/v3/cmd/goose -dir ./migrations mysql "root:fiber_rest_api@tcp(localhost:3306)/fiber_db" fix

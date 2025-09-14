@@ -1,0 +1,4 @@
+1. Add health check /app/health/health-check.go. Redis, DB connection check.
+2. Move the Versioning and api setup from main.go to /app/app.module.go
+3. I don't like the way to instantiate another new router instance of fiber router := fiber.New() for moduler routing, and api versioning. Try to fix that.
+4. Read the Prefork option and right way to apply it.

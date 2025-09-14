@@ -29,10 +29,7 @@ High level overview: ![High Level Design](./idea/go-fiber-rest-api.webp)
 1. **Clone and start the development environment:**
 
    ```bash
-   # Using Make
-   make dev
-
-   # Or using Docker Compose directly
+   # Using Docker Compose directly
    docker-compose up --build
    ```
 
@@ -40,55 +37,18 @@ High level overview: ![High Level Design](./idea/go-fiber-rest-api.webp)
    - **API**: http://localhost:8080
    - **Redis Insight**: http://localhost:8001
    - **Kafka UI**: http://localhost:8080 (Note: conflicts with API, see note below)
-   - **Adminer**: http://localhost:8082
 
 > **Note**: Kafka UI and the API both use port 8080. To avoid conflicts, you can modify the Kafka UI port in `docker-compose.yml` to something like `8083:8080`.
-
-### Production Environment
-
-```bash
-# Using Make
-make prod
-
-# Or using Docker Compose directly
-docker-compose -f docker-compose.prod.yml up --build
-```
 
 ## Available Commands
 
 ### Using Make
 
 ```bash
-# Development
-make dev          # Start development environment
-make dev-d        # Start development environment in detached mode
-
-# Production
-make prod         # Start production environment
-make prod-d       # Start production environment in detached mode
-
-# Management
-make stop         # Stop all containers
-make restart      # Restart all containers
-make clean        # Clean up containers and volumes
-make clean-all    # Clean up everything including images
-
-# Logs
-make logs         # Show all logs
-make logs-app     # Show API logs
-make logs-mysql   # Show MySQL logs
-make logs-redis   # Show Redis logs
-make logs-kafka   # Show Kafka logs
-
-# Database
-make db-connect   # Connect to MySQL database
-make redis-cli    # Connect to Redis CLI
-
-# Local development
-make install-air  # Install Air for hot reloading
-make air          # Run with Air locally
-make run          # Run locally without Air
-make test         # Run tests
+# Generate Migration
+make migration-generate name=migration_name_that_want_to_generate #Generate migration
+make migration-up        # Run the migration
+make migration-down      # Revert the last migration
 ```
 
 ### Using Docker Compose directly
@@ -98,38 +58,17 @@ make test         # Run tests
 docker-compose up --build
 docker-compose up --build -d  # detached mode
 
-# Production
-docker-compose -f docker-compose.prod.yml up --build
-
 # Stop
 docker-compose down
 
-# View logs
-docker-compose logs -f [service-name]
+# Clean
+docker compose down -v
 ```
 
 ## Environment Variables
 
-The application uses the following environment variables (automatically set in Docker Compose):
-
-```bash
-# Database
-DB_HOST=mysql
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=rootpassword
-DB_NAME=fiber_db
-
-# Redis
-REDIS_HOST=redis
-REDIS_PORT=6379
-
-# Kafka
-KAFKA_BROKERS=kafka:9092
-
-# Environment
-ENV=development  # or production
-```
+You can find the list of environment variable inside .env.examples (automatically set in Docker Compose). 
+Create a .env file in beside .env.example, set your environment variables then start docker container.
 
 ## Project Structure
 
@@ -140,7 +79,6 @@ ENV=development  # or production
 ├── Dockerfile             # Production Dockerfile
 ├── Dockerfile.dev         # Development Dockerfile with Air
 ├── docker-compose.yml     # Development environment
-├── docker-compose.prod.yml # Production environment
 ├── Makefile              # Convenient commands
 ├── go.mod                # Go modules
 ├── go.sum                # Go modules checksum
@@ -159,22 +97,6 @@ ENV=development  # or production
 - **Username**: root
 - **Password**: rootpassword
 - **Database**: fiber_db
-
-### Using Adminer
-
-1. Open http://localhost:8082
-2. Select "MySQL" as the system
-3. Enter the connection details above
-
-### Command Line Access
-
-```bash
-# Connect to MySQL
-make db-connect
-
-# Or using Docker directly
-docker exec -it mysql-db mysql -u root -prootpassword fiber_db
-```
 
 ## Redis Access
 
@@ -216,20 +138,6 @@ The `.air.toml` file contains the configuration for Air, including:
 - File watching patterns
 - Build commands
 - Exclusion rules
-
-## Development Tips
-
-1. **Volume Mounting**: Your source code is mounted into the container, so changes are reflected immediately.
-2. **Debugging**: You can attach debuggers to the running container on port 8080.
-3. **Database Persistence**: Database data is persisted in Docker volumes.
-4. **Log Monitoring**: Use `make logs` or `make logs-app` to monitor application logs.
-
-## Customization
-
-- Modify `docker-compose.yml` for development environment changes
-- Modify `docker-compose.prod.yml` for production environment changes
-- Update `.air.toml` for Air configuration changes
-- Edit `scripts/init.sql` for database initialization changes
 
 ## Troubleshooting
 
