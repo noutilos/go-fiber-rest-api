@@ -28,7 +28,6 @@ require (
 	github.com/gofiber/fiber/v2 v2.52.9 // indirect
 	github.com/gohugoio/hugo v0.149.1 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
-	github.com/golang-migrate/migrate v3.5.4+incompatible // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
 	github.com/golang-sql/sqlexp v0.1.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
