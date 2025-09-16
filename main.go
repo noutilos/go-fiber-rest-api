@@ -9,7 +9,9 @@ import (
 )
 
 func main() {
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		Prefork: true,
+	})
 
 	v1Api := app.Group("/v1/api")
 

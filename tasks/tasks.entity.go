@@ -18,7 +18,7 @@ const (
 )
 
 type Task struct {
-	ID          int        `json:"id"`
+	ID          int        `json:"id" gorm:"primaryKey"`
 	Title       string     `json:"title" validate:"required"`
 	Description string     `json:"description"`
 	Status      TaskStatus `json:"status" validate:"omitempty,oneof=pending in_progress completed failed canceled"`

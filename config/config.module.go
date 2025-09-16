@@ -15,4 +15,5 @@ func LoadEnv() {
 
 func init() {
 	LoadEnv()
+  ConnectDB()
 }

@@ -17,6 +17,11 @@ services:
       - mysql
       - redis
       - kafka
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: 750M
     networks:
       - app-network
     restart: unless-stopped
