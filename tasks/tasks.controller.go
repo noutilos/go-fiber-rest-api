@@ -33,7 +33,24 @@ func (c *TaskController) Create(ctx *fiber.Ctx) error {
 }
 
 func (c *TaskController) Update(ctx *fiber.Ctx) error {
-	return nil
+	id, err := strconv.Atoi(ctx.Params("id"))
+
+	if err != nil {
+		return ctx.Status(http.StatusBadRequest).JSON(fiber.Map{"error": "Invalid task ID"})
+	}
+
+	var task Task
+	if err := ctx.BodyParser(&task); err != nil {
+		return ctx.Status(http.StatusBadRequest).JSON(fiber.Map{"error": "Invalid request"})
+	}
+
+	task.ID = uint(id)
+
+	if err := c.taskService.Update(&task); err != nil {
+		return ctx.Status(http.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to update task", "details": err.Error()})
+	}
+
+	return ctx.JSON(fiber.Map{"message": "Task updated successfully", "task": task})
 }
 
 func (c *TaskController) Delete(ctx *fiber.Ctx) error {

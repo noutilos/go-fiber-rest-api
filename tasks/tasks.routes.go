@@ -14,7 +14,7 @@ func SetupRoutes(app *fiber.App) {
 	tasks.Get("/", controller.GetAll)
 	tasks.Post("/", utils.CustomValidator(&Task{}), controller.Create)
 	tasks.Get("/:id", controller.Get)
-	tasks.Put("/:id", controller.Update)
+	tasks.Patch("/:id", controller.Update)
 	tasks.Delete("/:id", controller.Delete)
 }
 

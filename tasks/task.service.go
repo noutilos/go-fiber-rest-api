@@ -24,9 +24,14 @@ func (s *TaskService) Create(payload *Task) (*Task, error) {
 	return payload, nil
 }
 
-func (s *TaskService) Update(payload *Task) (*Task, error) {
-	// Implement the logic to update a task
-	return nil, nil
+func (s *TaskService) Update(payload *Task)  error {
+	result := config.DB.Model(&payload).Updates(payload)
+	
+	if result.Error != nil {
+		return result.Error
+	}
+
+	return nil
 }
 
 func (s *TaskService) Delete(id int) error {

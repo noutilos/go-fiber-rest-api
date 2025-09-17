@@ -14,11 +14,11 @@ const (
 type TaskStatus string
 
 const (
-	Pending   TaskStatus = "pending"
+	Pending    TaskStatus = "pending"
 	InProgress TaskStatus = "in_progress"
 	Completed  TaskStatus = "completed"
 	Failed     TaskStatus = "failed"
-	Canceled   TaskStatus = "canceled"
+	Cancelled  TaskStatus = "cancelled"
 )
 
 type Task struct {
